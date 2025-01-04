@@ -1,0 +1,63 @@
+/* Vivaldi Browser Custom CSS */
+
+/* Hide buttons except bookmarks on the top toolbar */
+button.menuItem,
+button.menubar {
+    display: none;
+}
+
+/* Hide the Vivaldi icon on the top left */
+.topmenu button.vivaldi-horizontal-icon {
+    display: none;
+}
+
+/* Set the height of the bookmark bar at the top to 25px */
+.bookmark-bar-top .bookmark-bar {
+    height: 25px;
+}
+
+/* Overlay the header and bookmark bar */
+#header {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 25px;
+}
+
+.bookmark-bar[role="toolbar"] {
+    position: absolute;
+    height: 25px;
+    width: 80%;
+    z-index: 4;
+}
+
+/* Lower the overall height by 25px to avoid overlap */
+#webview-container,
+.tabbar-wrapper,
+#panels-container {
+    top: 25px !important;
+    height: calc(100% - 25px) !important;
+}
+
+/* Reset nested .tabbar-wrapper */
+.tabbar-wrapper .tabbar-wrapper {
+    position: relative;
+    top: 0 !important;
+    height: 100% !important;
+    background-color: var(--colorBgAlphaBlur);
+}
+
+.tabbar-wrapper:not(.tabbar-wrapper .tabbar-wrapper) {
+    height: 100% !important;
+}
+
+/* Reset the 25px addition in fullscreen mode */
+#browser.fullscreen #webview-container[role="document"] {
+    top: 0 !important;
+    height: 100% !important;
+}
+
+/* Hide the header in fullscreen mode */
+#browser.fullscreen #header {
+    display: none;
+}
