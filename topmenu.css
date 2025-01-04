@@ -43,7 +43,6 @@ button.menubar {
 .tabbar-wrapper .tabbar-wrapper {
     position: relative;
     top: 0 !important;
-    height: 100% !important;
     background-color: var(--colorBgAlphaBlur);
 }
 
