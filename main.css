@@ -21,7 +21,8 @@ button.menubar {
     position: absolute;
     z-index: 3;
     width: 100%;
-    height: 25px;
+    height: 25px !important;
+    min-height: 25px !important;
 }
 
 .bookmark-bar[role="toolbar"] {
@@ -59,4 +60,12 @@ button.menubar {
 /* Hide the header in fullscreen mode */
 #browser.fullscreen #header {
     display: none;
+}
+
+#titlebar > div.window-buttongroup {
+    height: 25px;
+}
+
+#pagetitle {
+    height: 25px;
 }
